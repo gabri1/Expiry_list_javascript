@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en">
+	<head>
+		<!-- Contains title and meta information about the document -->
+		<title>Expiry List</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="Expiry List Group 1, Expiry List 2, Table, Products">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Contains reset for default browser style -->
+		<link rel="stylesheet" href="assets/css/reset.css">
+		<!-- Contains css style of document -->
+		<link rel="stylesheet" href="assets/css/style.css">
+	</head>		
+	<body>
+		<div class="wrapper">
+			<!--SETTING VIEW-->
+			<div class="setting"> 
+				<div class="title">
+					<div class="title_title">
+						<h1>Inventory Management System</h1>
+					</div>
+					<div class="title_setting">
+						<!--Show the configuration of products-->
+						<button id="setting_out_button" >Setting</button>
+					</div>
+				</div>
+			</div>
+			<!--SETTING HIDDEN-->
+			<div id="setting_out">
+				<form>
+					<div class="container_settings">
+						<h3>Weeks:</h3>
+						<!--Input value of number Weeks-->
+						<input id="weeks" name="weeks" type="number">
+						<!--The response that it's used for convalidate the input-->
+						<p id="responseWeek"></p>
+					</div>	
+					<div class="container_settings">
+						<h3>Weekly products:</h3>
+						<!--Input value of number products-->
+						<input id="weeklyProducts" name="weeklyProducts" type="number">
+						<p id="responseWeeklyProducts"></p>
+					</div>
+					<div class="container_settings">
+						<!--Input duration of week-->
+						<h3>Week duration:</h3>
+						<input id="weekDuration" name="weekDuration" type="number">
+						<p id="responseWeekDuration"></p>
+					</div>
+					<div class="container_settings">
+						<h3>Check:</h3>
+						<!--Input number of checks-->
+						<input id="check" name="check" type="number">
+						<p id="responseCheck"></p>
+					</div>
+					<div class="container_settings">
+						<h3>Start Date:</h3>
+						<!--Input of date when start all program-->
+						<input id="startDate" name="startDate">
+						<p id="responseStartDate"></p>
+					</div>
+					<div class="container_settings">
+						<!--Input of date that I want to see-->
+						<h3>Date offset:</h3>
+						<input id="dateOffset" name="dateOffset" type="number">
+						<p id="responseDateOffset"></p>
+					</div>
+					<div class="container_settings">
+						<h3>Days Start Date:</h3>
+						<input id="daysToAddStartDate" name="daysToAddStartDate" type="number" placeholder=" Number">
+						<p id="responseDaysToAddStartDate"></p>
+					</div>
+					<div class="container_settings">
+						<h3>Format date:</h3>
+						<!--The option of format Date that change che format of a date View-->
+						<select name="formatDate" id="formatDate" class="format" placeholder=" Select">
+							<option value="none">-Please choose an option-</option> 
+							<option value="dayMonthYear">dayMonthYear</option>
+							<option value="monthDayYear">monthDayYear</option>
+							<option value="yearMonthDay">yearMonthDay</option>
+						</select>
+						<p id="responseFormatDate"></p>
+					</div>
+					<div class="btn_save_settings">
+						<!--Button that save all configurations-->
+						<button id="saveSettings" type="button">Save settings</button>
+					</div>	
+				</form>
+			</div>
+			<!--TABLE WITH BUTTON-->
+			<div class="content">
+				<div class="btn_table">
+					<!--Button Backward - It's managed in the main.js-->
+					<a href="#" id = "btn_backward"><button id = "backward">Backward</button></a>
+				</div>
+				<!--Content of all table -->
+				<div class="table">
+					<div class="content_table">
+						<!--Content of title of products filtered -->
+						<div class="table_week">
+						</div>
+						<div class="table_content">
+							<div class="table_product", id = "week"> 
+								<!--The table of product js-->   
+							</div>
+						</div>
+						<!--Content of title of products filtered -->
+						<div class="table_week">
+							FILTERED
+						</div>
+
+						<div class="table_filtered">
+							<div class="table_product", id = "filtered">
+								<!--The table of products filtered js-->   
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="btn_table">
+					<!--Button Forward - It's managed in the main.js-->
+				<a href="#" id = "btn_forward"><button id = "forward">Forward</button></a>
+				</div>
+			</div>
+		</div>
+		<!--All file js-->
+		<script src="js/expiryListItemManager.js"></script>
+		<script src="js/expiryListItemsManager.js"></script>
+		<script src="js/expiryListTableManager.js"></script>
+		<script src="js/expiryListSettingManager.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

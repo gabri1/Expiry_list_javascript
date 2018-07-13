@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: expiryListItemManager.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: expiryListItemManager.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @file: expiryListItemManager.js
+ * @author: Group01
+ * @version: 1.0
+ * Item Manager
+ *
+ * File that has the createItemManager function that creates the item manager object that manage
+ * the items creation
+ */ 
+
+/**Function that creates and returns a createItemManager object
+ * @returns {object} the createItemManager object
+ */
+ function createItemManager() {
+
+    /**
+     * object that creates and has methods for the creation of 
+     * an item
+     * @namespace itemManager
+     */
+    var itemManager = {
+        /**
+         * Function that creates and returns an item object, used for create a new item 
+         * @memberof itemManager
+         * @method createItem 
+         * @param {number} id - the id to set to the item
+         * @param {string} name - the name of the item
+         * @param {object} expDate - the expiration date of the item
+         * @param {string} state - the state of the item
+         * @param {number} numChecks - the number of checks of the item
+         * @returns {object} a new item
+         */
+        createItem: function(id, name, expDate, state, numChecks) {
+            /**
+            * @namespace item
+            * @property {number} id the item id
+            * @property {string} name the item name
+            * @property {string} expDate the item expiration date
+            * @property {string} state the item state
+            * @property {string} numChecks the item number of checks
+            */
+            var item = {
+                id: id,
+                name: name,
+                expDate: expDate,
+                state: state,
+                numChecks: numChecks
+            };
+
+            return item;
+        },
+        /**
+         * Method that return a random integer number,
+         * between the specified minimum and maximum values inclusive. 
+         * @memberof itemManager
+         * @method randomByManager 
+         * @param {number} min - the minimum value 
+         * @param {number} max - the maximum value
+         * @returns {number} the number random generated
+         */
+        randomByManager: function(min, max) {
+            var random = 0;
+            random = Math.floor(Math.random() * (max - min + 1)) + min;
+
+            return random;
+        },
+        /**
+         * Returns a random name of pruducts among those on the array products
+         * @memberof itemManager
+         * @method randomName 
+         * @returns {string} a random product name
+         */
+        randomName: function() {
+            var products = ["Banana", "Cheese", "Green Beans", "Apple", "Rice", "Pasta",
+            "Meat", "Nutella", "Dried Fruit", "Roast Beef"];
+            var randomProduct = products[itemManager.randomByManager(0, products.length - 1)];
+            
+            return randomProduct;
+        },
+        /**
+         * Returns a random date between two dates, inclusive the start date and
+         * inclusive the end date
+         * @memberof itemManager
+         * @method expirationDate
+         * @param {object} start - the start date
+         * @param {object} end - the end day
+         * @returns {object} a random date between the start date and the end date
+         */
+        expirationDate: function(start, end) {
+            var dayMilliseconds = 24*60*60*1000;
+            var min = start.getTime() ;
+            //doing that we consider all the milliseconds of the end date
+            var max = end.getTime() + (dayMilliseconds - 1); 
+            var randomDate = new Date(itemManager.randomByManager(min, max));
+            itemManager.setMidnight(randomDate);
+            
+            return randomDate;
+        },
+        /**
+         * Function that takes a date and sets the midnight
+         * @memberof itemManager
+         * @method setMidnight
+         * @param {object} date - the date to set to midnight
+         */
+        setMidnight: function(date) {
+            date.setMilliseconds(0);
+            date.setSeconds(0);
+            date.setMinutes(0);
+            date.setHours(0);
+        }
+    }     
+    return itemManager;
+ }</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="config.html">config</a></li><li><a href="item.html">item</a></li><li><a href="itemManager.html">itemManager</a></li><li><a href="itemsListManager.html">itemsListManager</a></li><li><a href="settingManager.html">settingManager</a></li><li><a href="tableManager.html">tableManager</a></li><li><a href="trackingObj.html">trackingObj</a></li></ul><h3>Global</h3><ul><li><a href="global.html#configureExpiryList">configureExpiryList</a></li><li><a href="global.html#createConfig">createConfig</a></li><li><a href="global.html#createExpiryListSettingManager">createExpiryListSettingManager</a></li><li><a href="global.html#createExpiryListTableManager">createExpiryListTableManager</a></li><li><a href="global.html#createItemManager">createItemManager</a></li><li><a href="global.html#createItemsListManager">createItemsListManager</a></li><li><a href="global.html#executeExpiriList">executeExpiriList</a></li><li><a href="global.html#generateFirstExpiryTable">generateFirstExpiryTable</a></li><li><a href="global.html#goBackwardButton">goBackwardButton</a></li><li><a href="global.html#goForwardButton">goForwardButton</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Jul 10 2018 22:38:00 GMT+0200 (GMT+02:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
