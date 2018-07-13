@@ -206,7 +206,7 @@ function createExpiryListSettingManager() {
                 responseWeeklyProducts.textContent = "\u2714";
                 weekDuration.focus();
                 
-                return true;
+                return false;
             } 
         },
         /**
