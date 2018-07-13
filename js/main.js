@@ -348,7 +348,7 @@ function configureExpiryList () {
     document.getElementById("saveSettings").addEventListener("click", function() {
         setManager.setConfig(config);
         executeExpiriList(config, false);  
-       // document.getElementById("setting_out").style.display = "none";  
+        
     });
 
     /**setting button that makes the settings pannel to appear */
