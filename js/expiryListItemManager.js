@@ -8,11 +8,13 @@
  * the items creation
  */ 
 
+
 /**Function that creates and returns a createItemManager object
  * @returns {object} the createItemManager object
  */
  function createItemManager() {
 
+    
     /**
      * object that creates and has methods for the creation of 
      * an item
