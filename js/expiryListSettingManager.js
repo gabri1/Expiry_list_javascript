@@ -26,6 +26,8 @@
   */
 function createExpiryListSettingManager() {
 
+
+
     /**
      * @namespace settingManager
      * @property {object} retriveFromDom Retrive element from the DOM html page.
@@ -204,7 +206,7 @@ function createExpiryListSettingManager() {
                 responseWeeklyProducts.textContent = "\u2714";
                 weekDuration.focus();
                 
-                return true;
+                return false;
             } 
         },
         /**
