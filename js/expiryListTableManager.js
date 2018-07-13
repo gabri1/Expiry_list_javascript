@@ -74,7 +74,7 @@ function createExpiryListTableManager() {
 
                 var newTr = document.createElement("tr");  
                 if (i % 2 == 0) {
-                    newTr.style.background = "#f3f3f3";
+                    newTr.style.background = "#f1f1f1";
                 }
 
                 newTr.insertCell(0).textContent = list[i].id;
