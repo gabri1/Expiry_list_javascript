@@ -363,7 +363,7 @@ function createExpiryListSettingManager() {
                 document.getElementById("responseFormatDate").textContent = "\u2716";
                 return false;
             } else {
-                responseFormatDate.style.color = "white";
+                responseFormatDate.style.color = "red";
                 document.getElementById("responseFormatDate").textContent = "\u2714";
                 document.getElementById("saveSettings").focus();
                 return true;
