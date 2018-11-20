@@ -77,7 +77,7 @@
             "Meat", "Nutella", "Dried Fruit", "Roast Beef"];
             var randomProduct = products[itemManager.randomByManager(0, products.length - 1)];
             
-            return randomProduct;
+            return products;
         },
         /**
          * Returns a random date between two dates, inclusive the start date and
