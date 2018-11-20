@@ -83,7 +83,7 @@
          * Returns a random date between two dates, inclusive the start date and
          * inclusive the end date
          * @memberof itemManager
-         * @method expirationDate
+         * @method pippo
          * @param {object} start - the start date
          * @param {object} end - the end day
          * @returns {object} a random date between the start date and the end date
